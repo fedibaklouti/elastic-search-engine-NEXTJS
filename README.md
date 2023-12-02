@@ -12,19 +12,4 @@ npx create-elasticsearch-dataset --dataset=books
 npx create-elasticsearch-dataset --dataset=movies
 ```
 
-Install the dependencies in the /app folder
-```bash
-  cd app/
-  npm install or yarn install
-```
-finally, run the development server:
-```bash
-npm run dev or yarn dev
-```
-or build the project: 
-```bash
-  yarn build or npm build
-  yarn start or yarn start
-```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
