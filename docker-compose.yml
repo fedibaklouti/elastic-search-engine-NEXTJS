@@ -7,7 +7,7 @@ services:
       context: app/
       dockerfile: Dockerfile
     restart: always
-
+    image: search-engine-app
     environment:
       - NODE_ENV=production
     ports:
@@ -17,6 +17,7 @@ services:
     depends_on:
       - elasticsearch
   elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
     build:
       context: elasticsearch/
       dockerfile: Dockerfile
@@ -36,6 +37,7 @@ services:
     restart: unless-stopped
 
   logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.2
     build:
       context: logstash/
       dockerfile: Dockerfile
@@ -58,6 +60,7 @@ services:
     restart: unless-stopped
 
   kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.2
     build:
       context: kibana/
       dockerfile: Dockerfile
