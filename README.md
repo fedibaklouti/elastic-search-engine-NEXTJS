@@ -1,8 +1,8 @@
 First you need to have docker installed in your computer
 
-then create elk docker container; 
+then create and build the elk docker container; 
 ```bash
-docker compose up
+docker compose up --build
 ```
 
 When the container has successfully been created and are running;
