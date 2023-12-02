@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const SearchResults = async ({ params: { query, page } }) => {
   const data = await fetch(
-    `http://localhost:3000/api/search?query=${query}&from=${page}`
+    `http://localhost:80/api/search?query=${query}&from=${page}`
   ).then((res) => res.json());
 
   console.log("data", data?.body);
