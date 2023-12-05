@@ -27,7 +27,7 @@ export default function BaseResult({
         className="h-auto min-w-[60px] w-[60px] object-contain"
       />
       <div className="max-w-fit overflow-hidden truncate... ">
-        <div className="flex  items-center mb-2 ">
+        <div className="flex  items-start mb-2 md:items-center ">
           <div
             className={`${result.icon_color} rounded-full mr-2 aspect-square flex justify-center align-middle
           h-12 w-12`}
@@ -36,7 +36,7 @@ export default function BaseResult({
           </div>
           <div>
             <h1
-              className="font-bold text-xl truncate -mb-0"
+              className="font-bold text-lg md:text-xl md:truncate -mb-0"
               dangerouslySetInnerHTML={{
                 __html: title + " (" + result.year + ")",
               }}

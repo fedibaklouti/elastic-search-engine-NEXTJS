@@ -31,26 +31,30 @@ export default function Ratings({ max_rating, rating, rating_count }) {
     max_rating === 10 ? parseFloat(rating) / 2.0 : parseFloat(rating);
 
   return (
-    <div className="flex items-center">
-      {Array.from({ length: 5 }, (_, i) => {
-        return i < +_lowered_rating.toFixed() ? (
-          <Voted key={i} />
-        ) : (
-          <Unvoted key={i} />
-        );
-      })}
-      <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-        {_lowered_rating}
-      </p>
-      <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-        out of
-      </p>
-      <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-        5
-      </p>
-      <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-        ({rating_count} reviews)
-      </p>
+    <div className="flex items-start flex-col md:flex-row md:items-center">
+      <div className="flex">
+        {Array.from({ length: 5 }, (_, i) => {
+          return i < +_lowered_rating.toFixed() ? (
+            <Voted key={i} />
+          ) : (
+            <Unvoted key={i} />
+          );
+        })}
+      </div>
+      <div className="flex flex-wrap">
+        <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+          {_lowered_rating}
+        </p>
+        <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+          out of
+        </p>
+        <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+          5
+        </p>
+        <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+          ({rating_count} reviews)
+        </p>
+      </div>
     </div>
   );
 }

@@ -14,8 +14,8 @@ const SearchResults = async ({ params: { query, page } }) => {
   const decodedQuery = decodeURIComponent(query);
 
   return (
-    <main className="flex min-h-screen max-h-screen flex-col items-center  gap-6 p-10">
-      <div className="self-start w-1/2  sticky top-4 ">
+    <main className="flex min-h-screen max-h-screen flex-col items-center w-full  gap-6 p-10 relative">
+      <div className="self-start w-full md:w-1/2  sticky top-4 ">
         <SearchInput defaultValue={decodedQuery} />
       </div>
 
